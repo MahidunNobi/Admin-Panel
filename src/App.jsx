@@ -5,19 +5,17 @@ import List from "./pages/List/List"
 import Login from "./pages/Login/Login"
 import New from "./pages/New/New"
 import Single from "./pages/Single/Single"
-import Navbar from "./componants/Common-Componants/Navbar/Navbar"
-import Sidebar from "./componants/Common-Componants/Sidebar/Sidebar"
+import MainLayout from './layouts/MainLayout'
 
 function App() {
 
 
   return (
     <>
-    <Narbar />
+   
     <Routes>
-      <Route path='/'>
-        <Route index element={<Home />} /> 
-        <Route path='login' element={<Login />} />
+      <Route path='/' element={<MainLayout />}>
+        <Route index element={<Home />} />         
         <Route path='user'>
           <Route index element={<List />} />
           <Route path=':id' element={<Single/>} />
@@ -29,6 +27,7 @@ function App() {
           <Route path='new' element={<New/>} />
         </Route>
       </Route>
+      <Route path='/login' element={<Login />} />
     </Routes>      
     </>
   )
