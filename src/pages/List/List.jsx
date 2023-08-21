@@ -1,8 +1,11 @@
 import React from 'react'
+import DataTable from '../../componants/List-Page-Componants/dataTable/DataTable'
 
 const List = () => {
   return (
-    <div>List</div>
+    <div className='list'>
+      <DataTable />
+    </div>
   )
 }
 

@@ -6,9 +6,9 @@ import { Outlet } from 'react-router-dom'
 const MainLayout = () => {
 
   return (
-    <div className='bg-orange-500'>
+    <div className=''>
       <Navbar />
-      <div className='container mx-auto md:flex md:justify-between'> 
+      <div className='md:flex'> 
       <Sidebar />
       <Outlet />
       </div>

@@ -11,12 +11,11 @@ import  {BiLogOut, BiCheck} from "react-icons/bi"
 const Sidebar = () => {
   const [theme, setTheme] = useState("white")
   return (
-    <div>
-      <div className='hidden md:block md:w-[300px] bg-white  p-4'>
+    <div className='w-[20%]'>
+      <div className='hidden md:block md:w-[100%] bg-white border border-gray-300'>
 
-        <div className='border-b border-gray-300 pb-2 mb-2 text-orange-500'> <span className='text-2xl'>Logo</span></div>
 
-        <div className='border-b border-gray-300 pb-2 mb-2'>
+        <div className='border-b border-gray-300 p-4  mb-2'>
           {/* ------------Main---------------- */}
           <div className="main">
             <span className="text-xs text-gray-500">MAIN</span>
@@ -99,7 +98,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className='border-b border-gray-300 pb-2 mb-2'>
+        <div className='border-b border-gray-300 p-4 mb-2'>
           {/* ------------Theme---------------- */}
           <div className="user">
             <span className="text-xs text-gray-500">THEME</span>
