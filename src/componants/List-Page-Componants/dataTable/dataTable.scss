@@ -1,6 +1,25 @@
 .dataTable{
     // height: 600px;
     padding: 20px;
+    
+    .title{
+        display: flex;
+        padding: 15px;
+       
+
+        justify-content: space-between;
+        h2{
+            font-size: 25px;
+            color: rgb(211, 209, 209);
+        }
+        a{
+            color: green;
+            border: 1px solid green;           
+            border-radius: 3px;
+            padding: 10px;
+        }
+    }
+
     .cellWithImg{
         display: flex;
         align-items: center;
@@ -32,7 +51,7 @@
     }
     .cellAction{
         
-        button{
+        a, button{
             padding: 3px 6px;
             border-radius: 5px;
             transition: 0.3s;

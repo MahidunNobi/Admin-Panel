@@ -3,13 +3,13 @@ import Navbar from "../componants/Common-Componants/Navbar/Navbar"
 import Sidebar from "../componants/Common-Componants/Sidebar/Sidebar"
 import { Outlet } from 'react-router-dom'
 
-const MainLayout = () => {
+const MainLayout = ({dark, setDark}) => {
 
   return (
     <div className=''>
-      <Navbar />
+      <Navbar setDark={setDark} dark={dark} />
       <div className='md:flex'> 
-      <Sidebar />
+      <Sidebar setDark={setDark} dark={dark} />
       <Outlet />
       </div>
     </div>

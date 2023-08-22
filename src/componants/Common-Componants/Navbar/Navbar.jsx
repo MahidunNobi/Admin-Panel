@@ -1,25 +1,31 @@
 import {AiOutlineSearch, AiOutlineBell, AiOutlineMessage, AiFillSetting} from "react-icons/ai"
-import {GrLanguage} from "react-icons/gr"
+import {FaLanguage} from "react-icons/fa"
+import {BsFillSunFill} from "react-icons/bs"
 import {BiMoon, BiMenuAltRight} from "react-icons/bi"
 import {RiDashboardFill} from "react-icons/ri"
+import { Link } from "react-router-dom"
 
-const Navbar = () => {
+const Navbar = ({dark, setDark}) => {
   return (
-    <div className='border-b border-gray-300 flex'>
-        <div className=' md:w-[20%] border-r border-gray-300 p-4 text-orange-500'> <span className='text-2xl'>Logo</span></div>
+    <div className=' navbar border-b border-gray-300 flex'>
+        <div className='logo md:w-[20%] border-r border-gray-300 p-4 text-orange-500'> 
+          <Link to={"/"} className='text-2xl'>Logo</Link>
+        </div>
         <div className="otherOptions flex w-[80%] items-center justify-between px-6">
           <div className="input border border-gray-300 rounded-md h-[35px] flex items-center px-3">
-            <input type="text" placeholder='Search...' className="outline-none text-lg" />
+            <input type="text" placeholder='Search...' className="outline-none text-lg bg-transparent" />
             <AiOutlineSearch className="text-xl cursor-pointer" />
           </div>
           <div className="userOptions hidden md:flex items-center space-x-4">
             <div className="language flex items-center cursor-pointer">
-              <GrLanguage className="text-2xl mr-2" />
+              <FaLanguage className="icon text-2xl  mr-2" />
               <span>English</span>
             </div>
-            <div className="moon cursor-pointer">
-              <BiMoon className="text-2xl"/>
-            </div>
+            <button className="moon cursor-pointer" onClick={()=> setDark(!dark)}>
+              { dark ?<BsFillSunFill className="text-2xl"/> :
+                       <BiMoon className="text-2xl"/>
+               }
+            </button>
             <div className="arrowInside cursor-pointer">
               <RiDashboardFill className="text-2xl" />
             </div>

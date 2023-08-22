@@ -6,37 +6,38 @@ import {ImStatsBars2, ImProfile} from "react-icons/im"
 import {MdHealthAndSafety} from "react-icons/md"
 import {SiLogstash} from "react-icons/si"
 import  {BiLogOut, BiCheck} from "react-icons/bi"
+import { Link } from 'react-router-dom'
 
 
-const Sidebar = () => {
-  const [theme, setTheme] = useState("white")
+const Sidebar = ({dark, setDark}) => {
+
   return (
     <div className='w-[20%]'>
-      <div className='hidden md:block md:w-[100%] bg-white border border-gray-300'>
+      <div className=' sidebar h-full hidden md:block md:w-[100%] border border-gray-300'>
 
 
-        <div className='border-b border-gray-300 p-4  mb-2'>
+        <div className=' p-4 '>
           {/* ------------Main---------------- */}
           <div className="main">
             <span className="text-xs text-gray-500">MAIN</span>
-            <div className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
+            <Link to="/" className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
               <MdOutlineSpaceDashboard className='mr-2 text-2xl text-orange-500' />
               <span className='text-gray-500'> Dashboard</span>
-            </div>
+            </Link>
           </div>
           {/* ------------Lists---------------- */}
           <div className="Lists">
             <span className="text-xs text-gray-500">LISTS</span>
             {/* ---------------Users---------- */}
-            <div className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
+            <Link to="/user" className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
               <BsPerson className='mr-2 text-2xl text-orange-500' />
               <span className='text-gray-500'> Users</span>
-            </div>
+            </Link>
             {/* ---------------Products---------- */}
-            <div className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
+            <Link to={"/products"} className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
               <AiFillShop className='mr-2 text-2xl text-orange-500' />
               <span className='text-gray-500'> Products</span>
-            </div>
+            </Link>
             {/* ---------------Orders---------- */}
             <div className='pl-2 flex items-center cursor-pointer hover:bg-gray-200 p-2'>
               <AiOutlineShoppingCart className='mr-2 text-2xl text-orange-500' />
@@ -98,17 +99,17 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className='border-b border-gray-300 p-4 mb-2'>
+        <div className=' px-4 mb-2'>
           {/* ------------Theme---------------- */}
           <div className="user">
             <span className="text-xs text-gray-500">THEME</span>
             <div className='flex space-x-2 my-3'>
-              <div className='w-[25px] h-[25px] border border-orange-500 rounded cursor-pointer' onClick={()=> setTheme("white")}>
-                { theme === "white" && <BiCheck className='text-xl' />}
-              </div>
-              <div className='w-[25px] h-[25px] border border-orange-500 rounded cursor-pointer bg-gray-800 text-white' onClick={()=> setTheme("black")}>
-                {theme === "black" && <BiCheck className='text-xl' />}
-              </div>
+              <button onClick={()=> setDark(!dark)} className='w-[25px] h-[25px] border bg-white border-orange-500 rounded cursor-pointer' >
+                { !dark && <BiCheck className='text-xl text-gray-800' />}
+              </button>
+              <button onClick={()=> setDark(!dark)} className='w-[25px] h-[25px] border border-orange-500 rounded cursor-pointer bg-gray-800 text-white' >
+                {dark && <BiCheck className='text-xl' />}
+              </button>
             </div>                       
           </div>
         </div>
