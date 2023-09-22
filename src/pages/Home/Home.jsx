@@ -1,5 +1,5 @@
 import React from 'react'
-import Widget from '../../componants/Home-Page-Componants/Widgets/widget'
+import Widget from '../../componants/Home-Page-Componants/Widgets/Widget'
 import Featured from '../../componants/Home-Page-Componants/Featured/Featured'
 import Chart from '../../componants/Home-Page-Componants/Chart/Chart'
 import Table from '../../componants/Home-Page-Componants/Table/Table'
